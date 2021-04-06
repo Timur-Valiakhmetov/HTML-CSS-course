@@ -41,18 +41,20 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.header-logo-kink {
-    margin-right: 41px;
+.header-logo-link {
     text-decoration: none;
 }
 .header-logo {
     width: 44px;
     height: 38px;
+    margin-right: 41px;
 }
 .header-search {
     width: 26px;
     height: 26.79px;
+    padding-top: 8px;
 }
+
 .header-account {
     margin: auto 33px;
     width: 29px;
@@ -310,6 +312,13 @@ body {
     justify-content: center;
     align-self: center;
     text-align: center;
+    transform: scale (1);
+    transition: 0.5s;
+    transition-delay: 0.2s;
+
+    &:hover {
+        transform: scale(1.2)
+    }
 }
 .products-bottom {
     color: $dpink;
@@ -393,6 +402,16 @@ body {
     max-width: 359.45px;
     text-align: center;
     margin-top: 97px;
+    
+    &__img {
+        transition: 1.5s;
+        transform: rotateY(0deg);
+        transition-delay: 0.2s;
+    }
+
+    &__img:hover {
+        transform: rotateY(360deg);
+    }
 }
 .feedback_text {
     margin-top: 30px;
@@ -445,6 +464,12 @@ body {
     border-style: none;
     border-radius: 0 25px 25px 0;
     max-width: 100px;
+    
+    &:hover {
+        background: none;
+        color: $dpink;
+        border:0.5px solid $dpink-2;
+    }
 }
 .footer {
     background-color: #222224;
@@ -452,6 +477,13 @@ body {
     margin-top: auto;
     display: flex;
     justify-content: space-around;
+
+    &-link:hover .footer-icon__color2 {
+        fill:$white;
+    }
+    &-link:hover .footer-icon__color {
+        fill: $pink;
+    }
 }
 .footer-text {
     font-size: 16px;
@@ -707,3 +739,156 @@ body {
 .pag-num:active {
     color: $dpink-2;
 }
+.product-review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #F7F7F7;
+    height: 777px;
+
+    &-img {
+        width: 597px;
+        height: 724px;
+        border: none;
+        margin-top: 10px;
+        transition-duration: 0.5s;
+        transition-delay: 0.1s;
+        transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+
+        &:hover {
+            transform: scale(1.2);
+            z-index: 1;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        background: rgba(42, 42, 42, 0.15);
+        padding: 12.65px 17.3px;
+        border: none;
+
+        &:hover .product-review__btn-right-icon-color {
+            fill:$dpink;
+        }
+
+        &-left {
+            left: 5px;
+        }
+
+        &-right {
+            right: 5px;
+
+            &-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+.product-information {
+    height: 601px;
+    background: $white;
+    border: 1px solid #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -65px;
+    margin-bottom: 129px;
+    position: relative;
+
+    &__header {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: $pink;
+        padding-top: 64.54px;
+    }
+    &__line-pink {
+        border-top:$dpink-2;
+        border-style: solid;
+        border-width: 3pxpx;
+        width: 63px;
+        border-bottom: none;
+        border-left:none;
+        border-right: none;
+        margin-top: 12px;
+    }
+    &__name {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color:#4D4D4D;
+        margin-top: 12.1px;
+    }
+    &__description {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #5E5E5E;
+        margin-top: 48.41px;
+        max-width: 555px;
+    }
+    &__price {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color:$dpink-2;
+        margin-top: 32.27px;
+    }
+    &__line-grey {
+        border-top: 1px solid #EAEAEA;
+        width: 641px;
+        margin-top: 65px; 
+    }
+    &__filters {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 65.05px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    &__button {
+        border: 1px solid $dpink;
+        margin-top: 49px;
+        margin-bottom: 65px;
+        display: flex;
+        position: relative;
+        transform: rotateX(0deg);
+        transition: 0.5s;
+        transition-delay: 0.2s;
+
+        &:hover {
+            background: $pink;
+            transform: rotateX(360deg);
+        }
+
+        &__icon {
+            width: 26px;
+            height: 24.2px;
+            padding: 14.62px 0 8.57px 23.5px;
+        }
+        
+        &___link {
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color:#F26376;
+            display:inline-block;
+            align-self: center;
+            padding: 14.62px 56.5px 13.6px 23px;
+        }
+
+        &:hover .product-information__button__icon_color2 {
+            fill: $white;
+        }
+        
+        &:hover .product-information__button___link {
+            color: $white;
+        }
+    }
+}
+
